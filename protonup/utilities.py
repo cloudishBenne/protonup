@@ -67,5 +67,9 @@ def folder_size(folder):
     size = 0
     for root, dirs, files in os.walk(folder, onerror=None):
         for file in files:
-            size += os.path.getsize(os.path.join(root, file))
+            # In case file is a broken link (usually the case with wine-ge)
+            try:
+                size += os.path.getsize(os.path.join(root, file))
+            except:
+                continue
     return size
