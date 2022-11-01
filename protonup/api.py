@@ -141,7 +141,7 @@ def get_proton(version=None, yes=True, dl_only=False, output=None, lutris=False)
     ############################################
     else:
         # old naming scheme  
-        if not version.startswith('GE'):
+        if version and not version.startswith('GE'):
             # LoL naming scheme
             if not version.endswith('LoL'):
                 installdir += 'lutris-ge-' + data['version'].replace('-GE', '') + '-x86_64'
