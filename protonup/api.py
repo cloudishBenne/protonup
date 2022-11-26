@@ -230,7 +230,7 @@ def get_proton(version=None, yes=True, dl_only=False, output=None, lutris=False)
 def remove_proton(version=None, lutris=False) -> bool:
     """Uninstall existing proton installation"""
     # fixes new naming scheme ###################
-    if version and not version.startswith("GE-"):
+    if not lutris and version and not version.startswith("GE-"):
         version = "Proton-" + version
     #############################################
     target = install_directory(lutris=lutris) + version

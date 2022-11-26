@@ -36,7 +36,7 @@ def main():
     if args.remove:
         if args.yes or input(f"Confirm remove {args.remove}? (Y/n): ") not in ['y', 'Y', '']:
             return
-        if not remove_proton(version=args.remove):
+        if not remove_proton(version=args.remove, lutris=args.lutris):
             print(f'Proton-{args.remove} not installed')
 
     if args.list:
